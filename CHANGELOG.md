@@ -1,11 +1,5 @@
-## 1.1.0
+## 2.0.0+1
 
-* Add `download` method #1
-
-## 1.0.1
-
-* Fix styling
-
-## 1.0.0
-
-* Initial release
+- Forked from `flutter_sanity` to `flutter_sanity_plus`
+- Updated package with latest dependencies
+- Cleaned up code
