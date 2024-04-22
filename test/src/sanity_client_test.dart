@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:flutter_sanity/src/exception.dart';
+import 'package:flutter_sanity_plus/src/exception.dart';
 import 'package:http/http.dart';
 import 'package:http/testing.dart';
 import 'package:test/test.dart';
-import 'package:flutter_sanity/src/sanity_client.dart';
+import 'package:flutter_sanity_plus/src/sanity_client.dart';
 
 void main() {
   late SanityClient client;

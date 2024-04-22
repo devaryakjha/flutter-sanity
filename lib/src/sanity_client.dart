@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:flutter_sanity/src/exception.dart';
-import 'package:flutter_sanity/src/http_client.dart';
+import 'package:flutter_sanity_plus/src/exception.dart';
+import 'package:flutter_sanity_plus/src/http_client.dart';
 import 'package:http/http.dart' as http;
 
 class SanityClient {
@@ -59,20 +59,14 @@ class SanityClient {
   /// Throws a [BadRequestException], [UnauthorizedException], [FetchDataException]
   /// in case the request did not succeed
   dynamic _returnResponse(http.Response response) {
-    switch (response.statusCode) {
-      case 200:
-        return _decodeReponse(response.body);
-      case 400:
-        throw BadRequestException(response.body);
-      case 401:
-      case 403:
-        throw UnauthorizedException(response.body);
-      case 500:
-      default:
-        throw FetchDataException(
+    return switch (response.statusCode) {
+      200 => _decodeReponse(response.body),
+      400 => throw BadRequestException(response.body),
+      401 || 403 => throw UnauthorizedException(response.body),
+      _ => throw FetchDataException(
           'Error occured while communication with server with status code: ${response.statusCode}',
-        );
-    }
+        )
+    };
   }
 
   /// Decodes the Sanity response

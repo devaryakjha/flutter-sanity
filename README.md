@@ -2,17 +2,17 @@
 
 This Dart package is a small abstraction on top of the Sanity.io API.
 
-## Installation 
+## Installation
 
 ```sh
-dart pub add flutter_sanity
+dart pub add flutter_sanity_plus
 ```
 
 ## Example
 
 ```dart
 // main.dart
-import 'package:flutter_sanity/flutter_sanity.dart';
+import 'package:flutter_sanity_plus/flutter_sanity_plus.dart';
 
 void main() async {
   final sanityClient = SanityClient(
